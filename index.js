@@ -17,6 +17,12 @@ mongoose.connect(MONGO_URI)
 // Routes
 app.use('/todos', todosRoutes);
 
+// Root route
+app.get("/", (req, res) => {
+    res.send("Welcome to the To-Do List API!");
+});
+
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
